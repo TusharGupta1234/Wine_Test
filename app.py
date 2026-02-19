@@ -63,6 +63,14 @@ html, body,
     padding-right: 4rem !important;
 }
 
+@media (max-width: 768px) {
+    .block-container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        padding-bottom: 2rem !important;
+    }
+}
+
 /* ── HERO ── */
 .hero {
     background: linear-gradient(160deg, var(--burg) 0%, var(--burg-dk) 100%);
@@ -74,6 +82,19 @@ html, body,
     margin-left: -4rem;
     margin-right: -4rem;
     margin-bottom: 3.5rem;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 3rem 1.5rem 3rem;
+        margin-left: -1rem;
+        margin-right: -1rem;
+        margin-bottom: 2rem;
+        border-radius: 0 0 28px 28px;
+    }
+    .hero-title {
+        font-size: 3.8rem !important;
+    }
 }
 .hero::before {
     content: '';
@@ -213,22 +234,6 @@ html, body,
     border-color: var(--burg) !important;
     color: white !important;
 }
-/* ── SEPARATOR between + and - buttons ── */
-[data-testid="stNumberInput"] > div > div:last-child {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 0 !important;
-    border: 1.5px solid #2E2E2E !important;
-    border-radius: 7px !important;
-    overflow: hidden !important;
-}
-[data-testid="stNumberInput"] > div > div:last-child button {
-    border: none !important;
-    border-radius: 0 !important;
-}
-[data-testid="stNumberInput"] > div > div:last-child button:first-child {
-    border-bottom: 1px solid #3E3E3E !important;
-}
 
 /* ── PREDICT BUTTON ── */
 [data-testid="stButton"] > button {
@@ -312,6 +317,18 @@ html, body,
     margin: 0 1rem;
 }
 
+/* ── MOBILE: stack Streamlit columns vertically ── */
+@media (max-width: 768px) {
+    [data-testid="stHorizontalBlock"] {
+        flex-direction: column !important;
+    }
+    [data-testid="stHorizontalBlock"] > [data-testid="stColumn"] {
+        width: 100% !important;
+        flex: 1 1 100% !important;
+        min-width: 100% !important;
+    }
+}
+
 /* ── SUGGESTIONS ── */
 .sug-wrap {
     margin-top: 2.5rem;
@@ -338,6 +355,37 @@ html, body,
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0.85rem;
+}
+
+@media (max-width: 768px) {
+    .sug-grid {
+        grid-template-columns: 1fr;
+        gap: 0.7rem;
+    }
+    .sug-wrap {
+        margin-top: 1.5rem;
+    }
+    .sug-card {
+        padding: 1rem 1rem !important;
+        gap: 0.75rem !important;
+    }
+    .sug-text {
+        font-size: 0.86rem !important;
+        line-height: 1.6 !important;
+    }
+    .sug-param {
+        font-size: 0.62rem !important;
+        margin-bottom: 0.3rem !important;
+    }
+    .sug-value {
+        font-size: 0.95rem !important;
+    }
+    .sug-icon {
+        font-size: 1.3rem !important;
+    }
+    .sug-title {
+        font-size: 1.25rem !important;
+    }
 }
 .sug-card {
     background: white;
@@ -367,7 +415,7 @@ html, body,
     margin-top: 0.05rem;
     flex-shrink: 0;
 }
-.sug-body {}
+.sug-body { min-width: 0; }
 .sug-param {
     font-size: 0.55rem;
     font-weight: 600;
@@ -380,6 +428,8 @@ html, body,
     font-size: 0.78rem;
     color: var(--text-dk);
     line-height: 1.55;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 .sug-value {
     font-family: 'Cormorant Garamond', serif;
@@ -398,6 +448,25 @@ html, body,
     border: 1px solid var(--cream2);
     border-radius: 12px;
     border-left: 3px solid #52B788;
+}
+
+@media (max-width: 768px) {
+    [data-testid="stNumberInput"] input {
+        font-size: 1rem !important;
+        padding: 0.5rem 0.6rem !important;
+    }
+    [data-testid="stNumberInput"] label {
+        font-size: 0.6rem !important;
+    }
+    .res-score {
+        font-size: 3rem !important;
+    }
+    .res-verdict {
+        font-size: 1.9rem !important;
+    }
+    .res-good, .res-avg {
+        padding: 1.8rem 1.4rem !important;
+    }
 }
 
 /* ── FOOTER ── */
