@@ -213,6 +213,22 @@ html, body,
     border-color: var(--burg) !important;
     color: white !important;
 }
+/* ── SEPARATOR between + and - buttons ── */
+[data-testid="stNumberInput"] > div > div:last-child {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    border: 1.5px solid #2E2E2E !important;
+    border-radius: 7px !important;
+    overflow: hidden !important;
+}
+[data-testid="stNumberInput"] > div > div:last-child button {
+    border: none !important;
+    border-radius: 0 !important;
+}
+[data-testid="stNumberInput"] > div > div:last-child button:first-child {
+    border-bottom: 1px solid #3E3E3E !important;
+}
 
 /* ── PREDICT BUTTON ── */
 [data-testid="stButton"] > button {
